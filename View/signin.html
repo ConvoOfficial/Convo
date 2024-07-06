@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en">
+
+<!--────────────────────────────────────────────────────────────────────────────────────────────-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/material.css" />
+    <link rel="stylesheet" href="/css/uikit.css" />
+    <link rel="stylesheet" href="/css/main.css"> <title> Sign In </title> 
+</head>
+
+<!--────────────────────────────────────────────────────────────────────────────────────────────-->
+
+<body class="uk-height-viewport uk-flex uk-child-width-1-2@m uk-purple-bg"> 
+
+    <div class="uk-flex uk-flex-center uk-flex-middle uk-background-default uk-padding-large">
+    <form action="/signin" method="POST" enctype="text/plain"
+          class="uk-flex uk-flex-column uk-width-expand">
+
+        <!--MESSAGE-->
+
+        <a href="/" class="uk-position-top-left uk-padding-small">
+            <h2 title > <i material> sms </i> Convo </h2>
+        </a><h2> Sign In </h2>
+      
+        <input type="text" placeholder="username" name="user" value="" class="uk-input" required>
+        <input type="password" placeholder="password" name="pass" value="" class="uk-input" required>
+  
+        <select class="uk-input uk-text-capitalize" placeholder="session timeout" name="time" required>
+            <option value="1" selected> 1 hour </option>
+            <option value="2"> 2 hour </option>
+            <option value="3"> 3 hour </option>
+            <option value="4"> 4 hour </option>
+            <option value="5"> 5 hour </option>
+            <option value="24"> 1 Day </option>
+        </select>
+  
+        <input type="submit" value="Sign In" class="uk-button uk-button-secondary uk-width-expand uk-rounded" >
+  
+        <p> not a member? <a strong href="/signup"> Sign Up </a> </p>
+
+    </form>
+    </div>
+
+    <div class="uk-flex uk-flex-center uk-flex-middle uk-flex-middle uk-visible@m uk-overflow-hidden">
+        <img src="/image/convo" width="450" class="uk-rounded">
+    </div>
+
+</body>
+
+<!--────────────────────────────────────────────────────────────────────────────────────────────-->
+
+</html>

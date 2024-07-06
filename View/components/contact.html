@@ -1,0 +1,80 @@
+<!DOCTYPE html> <html lang="en">
+
+<!--────────────────────────────────────────────────────────────────────────────────────────────-->
+    
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/material.css" />
+    <link rel="stylesheet" href="/css/uikit.css" />
+    <link rel="stylesheet" href="/css/main.css"> 
+    <title> Convo - Contacts </title> 
+</head>
+
+<!--────────────────────────────────────────────────────────────────────────────────────────────-->
+
+<body class="uk-height-viewport uk-background-secondary uk-light">
+<main class="uk-flex">
+
+<!--····························································································-->
+        
+        <div class="uk-flex uk-flex-column uk-height-viewport uk-inline uk-visible@m uk-width-1-1 uk-width-1-3@m" gray-light toggle >
+            
+            <div class="uk-navbar uk-navbar-container" navbar >
+                
+                <div class="uk-navbar-left"> <h3> Chats </h3> </div>
+                
+                <div class="uk-navbar-right"> 
+                    <label class="uk-hidden@m" button material>
+                        close <input type="radio" name="toggle" checked hidden>
+                    </label> 
+                </div>
+
+            </div>
+
+            <!--USERS-->
+            
+        </div>
+
+<!--····························································································-->
+        
+        <div class="uk-flex uk-flex-column uk-height-viewport uk-width-1-1" gray-dark toggle>
+
+            <div class="uk-navbar uk-navbar-container" navbar >
+
+                <div class="uk-navbar-left uk-gap-small uk-flex">
+                    <label class="uk-hidden@m" button material>
+                        menu <input type="radio" name="toggle" hidden>
+                    </label> 
+                    <a href="/convo"><h3 class="uk-visible@m"> 
+                        <i material> sms </i> Convo 
+                    </h3></a>
+                </div>
+
+                <div class="uk-navbar-center uk-visible@m">
+                    <h3> <!--CLIENT--> </h3> 
+                </div>
+                
+                <div class="uk-navbar-right uk-gap-small uk-flex">
+                    <form button search class="uk-light" action="/convo/contact" method="POST" >
+                        <input type="text" placeholder="search..." name="user" autocomplete="off">
+                        <button material type="submit" class="uk-padding-remove"> search </button>
+                    </form>
+                    <!--BADGE-->
+                    <a button href="/logout" >
+                        <i material>power_settings_new</i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!--CONTACT-->
+    
+        </div>
+
+<!--····························································································-->
+
+</main>
+</body>
+
+<!--────────────────────────────────────────────────────────────────────────────────────────────-->

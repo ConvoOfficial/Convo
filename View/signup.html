@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en">
+
+<!--────────────────────────────────────────────────────────────────────────────────────────────-->
+
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/material.css" />
+    <link rel="stylesheet" href="/css/uikit.css" />
+    <link rel="stylesheet" href="/css/main.css"> <title> Sign Up </title> 
+</head>
+
+<!--────────────────────────────────────────────────────────────────────────────────────────────-->
+
+<body class="uk-height-viewport uk-flex uk-child-width-1-2@m uk-purple-bg"> 
+
+    <div class="uk-flex uk-flex-center uk-flex-middle uk-background-default uk-padding-large">
+    <form action="/signup" method="POST" enctype="text/plain"
+          class="uk-flex uk-flex-column uk-width-expand">
+
+        <!--MESSAGE-->
+
+        <a href="/" class="uk-position-top-left uk-padding-small">
+            <h2 title > <i material> sms </i> Convo </h2>
+        </a><h2> Sign Up </h2>
+      
+        <input type="text" placeholder="username" name="user" value="" class="uk-input" required>
+        <input type="password" placeholder="password" name="pass1" value="" class="uk-input" required>
+        <input type="password" placeholder="password" name="pass2" value="" class="uk-input" required>
+        <input type="submit" value="Sign Up" class="uk-button uk-button-secondary uk-width-expand uk-rounded" >
+  
+        <p> are you a member? <a strong href="/signin"> Sign In </a> </p>
+
+    </form>
+    </div>
+
+    <div class="uk-flex uk-flex-center uk-flex-middle uk-flex-middle uk-visible@m uk-overflow-hidden">
+        <img src="/image/convo" width="450" class="uk-rounded">
+    </div>
+
+</body>
+
+<!--────────────────────────────────────────────────────────────────────────────────────────────-->
+
+</html>
