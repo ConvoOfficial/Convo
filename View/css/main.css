@@ -177,10 +177,11 @@ form, .uk-gap-small { gap: 10px; }
 [message-box] {
     max-height: calc(100vh - 70px);
     overflow-anchor: auto;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-x: auto;
 }
 
-[message_form] {
+[message-form] {
     background: #101116 !important;
     border-radius: 20px;
     flex-direction: row;
@@ -189,7 +190,7 @@ form, .uk-gap-small { gap: 10px; }
     gap: 0px;
 }
 
-[message_form] > input, button {
+[message-form] > input, button {
     border-color: transparent !important;
     background: transparent !important;
     color: white;

@@ -24,7 +24,7 @@ namespace convo { namespace html {
         auto data = db::get_state( user ); ulong count=0;
 
         for( auto &x: data["cont"].as<array_t<object_t>>() ){
-             count += x["notf"].as<uchar>();
+             count += x["notf"].as<int>();
         }   
 
         if( count >= 10 ){
@@ -97,16 +97,20 @@ namespace convo { namespace html {
 
         for( ulong x=0; x < list.size(); x++ ){ 
              auto y = list[x]["name"].as<string_t>();
-             auto z = list[x]["notf"].as<uchar>();
+             auto z = list[x]["notf"].as<int>();
+             auto n = string_t();
+
+        if ( z>=10 ){ n = R"(<i badge> +9 </i>)"; }
+        elif( z!=0 ){ n = string::format(R"(<i badge> %u </i>)",z); }
 
             res += regex::format( R"(
                 <li class="uk-flex uk-flex-between uk-padding-small"> 
                 <div class="uk-flex uk-flex-middle">
-                    <a href="/convo/contact/rmov/${0}" material hidden> close </a>
+                    <a href="/convo/contact/rmov/${0}" material> close </a>
                     <a href="/convo/${0}" link > ${0} </a>
-                </div><div><badge> ${2} </badge> ${1} </div>
+                </div><div> ${2} ${1} </div>
                 </li>
-            )", y, db::is_connected(y) ? "🟢" : "🔴", z );
+            )", y, db::is_connected(y) ? "🟢" : "🔴", n );
         }
 
         res += R"(</ul>)"; return res;

@@ -28,16 +28,19 @@ namespace convo {
             if( !db::is_connected( from ) ){ return; }
             if( !db::user_exists( to ) )   { return; }
             if( message.empty() )          { return; }
-            
+
+            auto dn = false;
             auto id = db::get_chat_id( from, to );
             db::append_message( from, to, id, message );
-            db::append_notification( from, to );
 
             auto n = clients.first(); while( n != nullptr ){
             if ( id == n->data.params["ID"] ){ 
+            if ( n->data.params["user"] == to ){ dn = true; }
                  auto b = from == n->data.params["user"];
                  n->data.write( html::new_message( b, from, message ));
             }    n = n->next; }
+
+            if( !dn ) db::append_notification( from, to );
 
         });
 
@@ -64,8 +67,9 @@ namespace convo {
     /*.........................................................................*/
 
         app.GET("/:client",[]( express_http_t cli ){
-            if(!db::user_exists( url::normalize( cli.params["client"] )))
-              { return; }
+            if(!db::user_exists( url::normalize( cli.params["client"] )) || 
+                url::normalize( cli.params["client"] )==cli.params["user"]
+            ){ return; }
 
             cli.params["ID"] = db::get_chat_id( 
                 url::normalize(cli.params["client"]),
@@ -108,7 +112,7 @@ namespace convo {
     /*.........................................................................*/
 
         app.GET([]( express_http_t cli ){
-            cli.send("DONE");
+            cli.sendFile( "./View/components/empty.html" );
         });
 
     /*.........................................................................*/

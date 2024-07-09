@@ -96,8 +96,8 @@ namespace convo { namespace db {
 
         for( ulong x=0; x<cont.size(); x++ ){
         if ( cont[x]["name"].as<string_t>() == from ){
-        if ( cont[x]["notf"].as<uchar>() > 10 ){ return; }
-             cont[x]["notf"] = cont[x]["notf"].as<uchar>()+1;
+        if ( cont[x]["notf"].as<int>() > 10 ){ return; }
+             cont[x]["notf"] = cont[x]["notf"].as<int>()+1;
              state["cont"] = cont; set_state( to, state ); return;
         }}
 
@@ -188,7 +188,7 @@ namespace convo { namespace db {
     bool is_connected( string_t user ){
         if( !user_exists( user ) ){ return false; }
         auto   data = get_state( user );
-        return data["stat"].as<uchar>()>0;
+        return data["stat"].as<int>()>0;
     }
 
     void reset_connection( string_t user ){
@@ -201,16 +201,16 @@ namespace convo { namespace db {
     void set_disconnected( string_t user ){
         if( !user_exists( user ) ){ return; }
         auto data = get_state( user );
-        if ( data["stat"].as<uchar>() == 0 ){ return; }
-             data["stat"] = data["stat"].as<uchar>()-1;
+        if ( data["stat"].as<int>() == 0 ){ return; }
+             data["stat"] = data["stat"].as<int>()-1;
         set_state( user, data );
     }
 
     void set_connected( string_t user ){
         if( !user_exists( user ) ){ return; }
         auto data = get_state( user );
-        if ( data["stat"].as<uchar>() == 255 ){ return; }
-             data["stat"] = data["stat"].as<uchar>()+1;
+        if ( data["stat"].as<int>() == 255 ){ return; }
+             data["stat"] = data["stat"].as<int>()+1;
         set_state( user, data );
     }
 
