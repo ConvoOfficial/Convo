@@ -16,7 +16,7 @@ Introducing the revolutionary messaging app that breaks free from the constraint
 ## Features
 
 - 📌: It is memory safe thanks to [The Nodepp Project](https://github.com/NodeppOficial/nodepp), So you don have to worry about Segment Fault Errors.
-- 📌: It is complitly Asinchronous, No Thread Pool, Just Non-blocking Programming, So you can Handle a lot of users at the same time.
+- 📌: It is completely Asinchronous, No Thread Pool, Just Non-blocking Programming, So you can Handle a lot of users at the same time.
 - 📌: It notify the client when there is a new message or the other peer is 🟢Connected / 🔴Disconnected.
 - 📌: No Javascript Needed, Just Html, Css & C++.
 
